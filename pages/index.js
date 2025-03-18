@@ -1,3 +1,4 @@
+// File: pages/index.js
 import { useState } from 'react';
 import Head from 'next/head';
 
@@ -14,7 +15,7 @@ export default function Home() {
     setResult(null);
     
     try {
-      const response = await fetch(/api/downloader?url=${encodeURIComponent(url)});
+      const response = await fetch(`/api/downloader?url=${encodeURIComponent(url)}`);
       const data = await response.json();
       
       if (!response.ok) {
