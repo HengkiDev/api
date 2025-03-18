@@ -1,3 +1,4 @@
+// File: next.config.js
 module.exports = {
   async rewrites() {
     return [
@@ -7,4 +8,11 @@ module.exports = {
       },
     ];
   },
+  // Add more logging in development
+  webpack: (config, { dev }) => {
+    if (dev) {
+      config.devtool = 'eval-source-map';
+    }
+    return config;
+  }
 };
